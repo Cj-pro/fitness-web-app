@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Workout Hub</h1>
+    <nav>
+      <a href="index.php">Home</a>
+      <a href="workouts.html">Workouts</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>About Us</h2>
+    <p>We help people stay fit with simple, effective workout programs.</p>
+     <section>
+      <h3>Our Mission</h3>
+      <p>We believe fitness should be accessible, fun, and empowering. Our mission is to provide high-quality, easy-to-follow workouts that help you achieve your goals—whether you're just getting started or looking to push your limits.</p>
+    </section>
+
+    <section>
+      <h3>Why Choose Workout Hub?</h3>
+      <ul>
+        <li>💪 Expert-designed routines for all fitness levels</li>
+        <li>🏠 Home-friendly and gym-friendly workouts</li>
+        <li>📅 Structured programs for consistent progress</li>
+        <li>📱 Mobile-friendly design for workouts on the go</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Meet the Team</h3>
+      <p>We're a passionate group of certified trainers, fitness enthusiasts, and tech developers committed to helping people live healthier lives. Our trainers bring years of experience in personal training, sports science, and nutrition.</p>
+    </section>
+
+    <section>
+      <h3>Our Values</h3>
+      <ul>
+        <li>Inclusivity – Everyone is welcome, no matter your background or fitness level.</li>
+        <li>Consistency – Progress comes with patience and regular effort.</li>
+        <li>Community – Support, motivate, and grow together.</li>
+        <li>Innovation – We keep improving to serve you better.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Get Started Today</h3>
+      <p>Ready to take the first step? <a href="workouts.html">Explore our workout plans</a> and start your fitness journey with us!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Workout Hub</p>
+  </footer>
+</body>
+</html>
+ 
+<!--
+<?php include "db.php"; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Workout Hub</h1>
+    <nav>
+      <a href="index.php">Home</a>
+      <a href="workouts.php">Workouts</a>
+      <a href="about.php">About</a>
+      <a href="contact.php">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <?php
+    $result = $conn->query("SELECT * FROM about_page ORDER BY id ASC");
+
+    if ($result && $result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo "<section>";
+            echo "<h3>" . htmlspecialchars($row['section_title']) . "</h3>";
+
+            if ($row['section_type'] === 'list') {
+                echo "<ul>";
+                $items = explode("|", $row['section_content']);
+                foreach ($items as $item) {
+                    echo "<li>" . htmlspecialchars($item) . "</li>";
+                }
+                echo "</ul>";
+            } else {
+                echo "<p>" . $row['section_content'] . "</p>"; // allows links
+            }
+
+            echo "</section>";
+        }
+    } else {
+        echo "<p>No About page content found. Please add some in the database.</p>";
+    }
+    ?>
+  </main>
+
+  <footer>
+    <p>© 2025 Workout Hub</p>
+  </footer>
+</body>
+</html>
+-->

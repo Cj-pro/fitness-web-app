@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workout Programs</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Workout Hub</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="workouts.html">Workouts</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Workout Programs</h2>
+    <div class="workout-grid">
+      <a class="card" href="workout-details.html?plan=beginner">
+        <h3>Beginner Program</h3>
+        <p>Start your journey with basic exercises.</p>
+      </a>
+      <a class="card" href="workout-details.html?plan=intermediate">
+        <h3>Intermediate Program</h3>
+        <p>Level up your fitness routine.</p>
+      </a>
+      <a class="card" href="workout-details.html?plan=advanced">
+        <h3>Advanced Program</h3>
+        <p>Challenge yourself with advanced moves.</p>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Workout Hub</p>
+  </footer>
+</body>
+</html>
+
+<!--
+<?php include "db.php"; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workout Programs</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Workout Hub</h1>
+    <nav>
+      <a href="index.php">Home</a>
+      <a href="workouts.php">Workouts</a>
+      <a href="about.php">About</a>
+      <a href="contact.php">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Workout Programs</h2>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        $title = $conn->real_escape_string($_POST['title']);
+        $description = $conn->real_escape_string($_POST['description']);
+        $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $_POST['slug'])));
+
+        $sql = "INSERT INTO workout_programs (title, description, slug)
+                VALUES ('$title', '$description', '$slug')";
+        
+        if ($conn->query($sql) === TRUE) {
+            echo "<p style='color:green;'>✅ Program added successfully!</p>";
+        } else {
+            echo "<p style='color:red;'>❌ Error: " . $conn->error . "</p>";
+        }
+    }
+    ?>
+
+    <form method="POST" action="workouts.php" style="margin-bottom: 20px;">
+      <h3>Add New Program</h3>
+      <label for="title">Program Title:</label><br>
+      <input type="text" name="title" id="title" required><br><br>
+
+      <label for="description">Description:</label><br>
+      <textarea name="description" id="description" rows="3" required></textarea><br><br>
+
+      <label for="slug">Slug (used for link):</label><br>
+      <input type="text" name="slug" id="slug" placeholder="beginner, intermediate, advanced" required><br><br>
+
+      <button type="submit">Add Program</button>
+    </form>
+
+    <div class="workout-grid">
+      <?php
+      $result = $conn->query("SELECT * FROM workout_programs ORDER BY created_at DESC");
+      if ($result && $result->num_rows > 0) {
+          while ($row = $result->fetch_assoc()) {
+              echo "<a class='card' href='workout-details.php?plan=" . htmlspecialchars($row['slug']) . "'>";
+              echo "<h3>" . htmlspecialchars($row['title']) . "</h3>";
+              echo "<p>" . htmlspecialchars($row['description']) . "</p>";
+              echo "</a>";
+          }
+      } else {
+          echo "<p>No workout programs found. Add one above.</p>";
+      }
+      ?>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Workout Hub</p>
+  </footer>
+</body>
+</html>
+-->
